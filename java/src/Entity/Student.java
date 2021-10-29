@@ -1,15 +1,12 @@
 package Entity;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Student {
     private String studentID;
     private String name;
     private String gender;
-    private String birthday;
+    private Date birthday;
     private String address;
     private String classroom;
     private String email;
@@ -29,7 +26,7 @@ public class Student {
         this.name = name;
     }
 
-    public Student(String studentID, String name, String gender, String birthday, String address, String classroom, String email, String phone) {
+    public Student(String studentID, String name, String gender, Date birthday, String address, String classroom, String email, String phone) {
         this.studentID = studentID;
         this.name = name;
         this.gender = gender;
@@ -65,11 +62,11 @@ public class Student {
         this.gender = gender;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
