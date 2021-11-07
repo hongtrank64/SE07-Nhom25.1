@@ -13,7 +13,7 @@ import javax.imageio.spi.ServiceRegistry;
  *
  * @author Anh Lan
  */
-public class HebernateUtils {
+public class HibernateUtils {
     public static final SessionFactory sessionFactory = buildSessionFactory();
     
     private static SessionFactory buildSessionFactory() {
