@@ -86,7 +86,7 @@ public class Login extends Fragment {
     }
 
     @Override
-    public void onAttach(@NonNull Context context) { // trong kia lại không ghi, hàm này thực hiện khi cái fragment này được đưa vào act
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         Activity activity = (Activity) context;
         loginFormActivityListener = (OnLoginFormActivityListener) activity;

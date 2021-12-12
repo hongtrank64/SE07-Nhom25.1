@@ -14,11 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-// mn nên vẽ ra một cái sơ đồ xem khi đăng nhập thì app sẽ làm gì, từ màn hình a thao tác abc thì ra cái gì, thì mới làm đc
-// vẽ đủ tất cả các trạng thái của app rồi mới làm, khi sửa chữa hay cho người khác đọc mới hiểu đc =))
-// thiết kế trước rồi mới làm
-// đi ngủ nhá :v
-// ko =))
 public class AfterLogin extends Fragment {
 
     private TextView textView;
