@@ -1,7 +1,9 @@
 package com.example.studentmanagement;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import retrofit2.Call;
@@ -54,12 +56,37 @@ public class Login extends Fragment {
             }
         });
 
+        Exit_btn = view.findViewById(R.id.btnthoat);
+        Exit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogExit();
+            }
+        });
+
         return view;
 
     }
 
+    private void DialogExit() {
+//        Dialog dialog = new Dialog();
+//        dialog.setContentView(R.layout.dialogexit);
+//
+//        dialog.setCanceledOnTouchOutside(false);
+//
+//        Button btnYes = dialog.findViewById(R.id.btndongy);
+//        Button btnNo = dialog.findViewById(R.id.btnhuybo);
+//
+//        btnYes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Login.this, Login.class);
+//            }
+//        });
+    }
+
     @Override
-    public void onAttach(@NonNull Context context) {
+    public void onAttach(@NonNull Context context) { // trong kia lại không ghi, hàm này thực hiện khi cái fragment này được đưa vào act
         super.onAttach(context);
         Activity activity = (Activity) context;
         loginFormActivityListener = (OnLoginFormActivityListener) activity;
@@ -100,8 +127,19 @@ public class Login extends Fragment {
                 if (response.body() != null && response.body().getResponse().equals("ok")) {
                     MainActivity.prefConfig.writeLoginStatus(true);
                     loginFormActivityListener.performLogin(response.body().getStudentID());
-                } else {
-                    MainActivity.prefConfig.displayToast("LogIn Failed...Please try again...");
+                }
+                else if (username.isEmpty() || password.isEmpty()) {
+                    if (username.isEmpty()) {
+                        Username.setError("Vui lòng nhập tên đăng nhập");
+                    }
+                    else {
+                        Username.setText(username);
+                        Password.setError("Vui lòng nhập mật khẩu");
+                    }
+                }
+
+                else {
+                    MainActivity.prefConfig.displayToast("Tên đăng nhập hoặc mật khẩu không đúng...Vui lòng thử lại...");
                 }
             }
 
@@ -111,8 +149,8 @@ public class Login extends Fragment {
             }
         });
 
+
         Username.setText("");
         Password.setText("");
     }
 }
-

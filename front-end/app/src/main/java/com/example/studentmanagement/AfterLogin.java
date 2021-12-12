@@ -1,27 +1,31 @@
 package com.example.studentmanagement;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+// mn nên vẽ ra một cái sơ đồ xem khi đăng nhập thì app sẽ làm gì, từ màn hình a thao tác abc thì ra cái gì, thì mới làm đc
+// vẽ đủ tất cả các trạng thái của app rồi mới làm, khi sửa chữa hay cho người khác đọc mới hiểu đc =))
+// thiết kế trước rồi mới làm
+// đi ngủ nhá :v
+// ko =))
 public class AfterLogin extends Fragment {
 
     private TextView textView;
-    Button button;
+    private Button btnDiNgu;
+    private MainActivity activity;
 
-    public AfterLogin() {
-
-    }
-
+    public AfterLogin() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,15 +33,20 @@ public class AfterLogin extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.after_login_fragment, container, false);
 
-        button = (Button) view.findViewById(R.id.btndangxuat);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent();
-            }
-        });
-
         return view;
+    }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        activity = (MainActivity) context;
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        btnDiNgu = view.findViewById(R.id.btnDiNgu);
+        btnDiNgu.setOnClickListener(v -> activity.performLogout());
     }
 }

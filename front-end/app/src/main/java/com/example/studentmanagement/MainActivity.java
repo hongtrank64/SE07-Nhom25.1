@@ -48,8 +48,12 @@ public class MainActivity extends AppCompatActivity implements Login.OnLoginForm
                 .commit();
 
     }
+
+    public void performLogout() {
+        prefConfig.writeLoginStatus(false);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new Login())
+                .commit();
+
+    }
 }
-
-
-
-
