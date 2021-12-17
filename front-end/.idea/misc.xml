@@ -3,19 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/activity_main.xml" value="0.184375" />
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/after_login_fragment.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/dialogexit.xml" value="0.14628623188405798" />
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/fragment_first.xml" value="0.1634963768115942" />
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/fragment_second.xml" value="0.1634963768115942" />
-        <entry key="..\:/StudentManagement2/StudentManagement2/app/src/main/res/layout/login_fragment.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/layout/activity_after_login.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/layout/activity_main2.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/layout/after_login_fragment.xml" value="0.1" />
+        <entry key="..\:/StudentManagement2/app/src/main/res/layout/activity_after_log_in.xml" value="0.1" />
+        <entry key="..\:/StudentManagement2/app/src/main/res/layout/activity_log_in.xml" value="0.1" />
         <entry key="..\:/StudentManagement2/app/src/main/res/layout/dialogexit.xml" value="0.1" />
-        <entry key="..\:/StudentManagement2/app/src/main/res/layout/login_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>
