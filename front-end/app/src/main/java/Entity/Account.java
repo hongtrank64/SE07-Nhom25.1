@@ -7,6 +7,17 @@ public class Account {
     @SerializedName("response")
     private String response;
 
+    @SerializedName("name")
+    private String full_name;
+
+    public String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
     @SerializedName("studentID")
     private String studentID;
 
@@ -30,8 +41,9 @@ public class Account {
     public Account() {
     }
 
-    public Account(String response, String studentID, String username, String pass, int root) {
+    public Account(String response, String full_name, String studentID, String username, String pass, int root) {
         this.response = response;
+        this.full_name = full_name;
         this.studentID = studentID;
         this.username = username;
         this.pass = pass;
