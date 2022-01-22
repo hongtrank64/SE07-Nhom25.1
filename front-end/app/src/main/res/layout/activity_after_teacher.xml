@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="730dp"
+        android:background="#F8D0D5"
+        tools:context=".Student_Activity">
+
+    <TextView
+        android:id="@+id/name_teacher"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/reg_student"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/background_button"
+        android:drawableTop="@drawable/profile"
+        android:text="Đăng kí tài khoản"
+        android:textSize="12dp"></Button>
+
+        <Button
+            android:id="@+id/ínsert_student"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="70dp"
+            android:layout_toRightOf="@+id/reg_student"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/add"
+            android:text="Thêm sinh viên"
+            android:textSize="12dp"></Button>
+
+        <Button
+            android:id="@+id/list_student"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/list"
+            android:text="Danh sách lớp"
+            android:textSize="12dp"></Button>
+
+        <Button
+            android:id="@+id/a4"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="250dp"
+            android:layout_toRightOf="@+id/list_student"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/event"
+            android:text="Sự kiện"
+            android:textSize="12dp"></Button>
+
+
+    <Button
+        android:id="@+id/btn_dangxuat"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="435dp"
+        android:background="@drawable/background_button"
+        android:drawableTop="@drawable/logout"
+        android:text="Đăng xuất"
+        android:textSize="12dp"></Button>
+
+    </RelativeLayout>
+</ScrollView>

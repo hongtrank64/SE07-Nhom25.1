@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Student_Activity"
+    android:background="#FBD7DA">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <TableLayout
+                android:id="@+id/table_list_student"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TextView
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Danh sách lớp"
+                    android:textSize="40dp">
+                </TextView>
+
+                <TableRow
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px">
+
+
+                    <TextView
+                        android:id="@+id/ID_list"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:text="MSV"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_fullname"
+                        android:layout_width="200dp"
+                        android:background="@drawable/border"
+                        android:text="Họ và tên"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_gender"
+                        android:layout_width="80dp"
+                        android:background="@drawable/border"
+                        android:text="Giới tính"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_birth"
+                        android:layout_width="120dp"
+                        android:background="@drawable/border"
+                        android:text="Ngày sinh"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_address"
+                        android:layout_width="130dp"
+                        android:background="@drawable/border"
+                        android:text="Địa chỉ"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_classroom"
+                        android:layout_width="80dp"
+                        android:background="@drawable/border"
+                        android:text="Lớp"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_email"
+                        android:layout_width="280dp"
+                        android:background="@drawable/border"
+                        android:text="Email"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/list_phone"
+                        android:layout_width="130dp"
+                        android:background="@drawable/border"
+                        android:text="SĐT"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                </TableRow>
+            </TableLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
+</RelativeLayout>
+
