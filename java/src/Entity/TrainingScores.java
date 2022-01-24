@@ -1,5 +1,7 @@
 package Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Objects;
 import java.io.Serializable;
 
@@ -7,14 +9,12 @@ public class TrainingScores implements Serializable{
 
     public static class TrainingScoresId implements Serializable {
         private Student student;
-        private String sem_year;
 
         public TrainingScoresId() {
         }
 
         public TrainingScoresId(Student student, String sem_year) {
             this.student = student;
-            this.sem_year = sem_year;
         }
 
         public Student getStudent() {
@@ -25,19 +25,10 @@ public class TrainingScores implements Serializable{
             this.student = student;
         }
 
-        public String getSem_year() {
-            return sem_year;
-        }
-
-        public void setSem_year(String sem_year) {
-            this.sem_year = sem_year;
-        }
-
         @Override
         public String toString() {
             return "TrainingScoresID{" +
                     "student=" + student +
-                    ", sem_year='" + sem_year + '\'' +
                     '}';
         }
 
@@ -46,24 +37,29 @@ public class TrainingScores implements Serializable{
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             TrainingScoresId that = (TrainingScoresId) o;
-            return Objects.equals(student, that.student) &&
-                    Objects.equals(sem_year, that.sem_year);
+            return Objects.equals(student, that.student);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(student, sem_year);
+            return Objects.hash(student);
         }
     }
 
     private TrainingScoresId id;
+
+    @SerializedName("sem_year")
+    private String sem_year;
+
+    @SerializedName("scores")
     private Integer scores;
 
     public TrainingScores() {
     }
 
-    public TrainingScores(TrainingScoresId id, Integer scores) {
+    public TrainingScores(TrainingScoresId id, String sem_year, Integer scores) {
         this.id = id;
+        this.sem_year = sem_year;
         this.scores = scores;
     }
 
@@ -73,6 +69,14 @@ public class TrainingScores implements Serializable{
 
     public void setId(TrainingScoresId id) {
         this.id = id;
+    }
+
+    public String getSem_year() {
+        return sem_year;
+    }
+
+    public void setSem_year(String sem_year) {
+        this.sem_year = sem_year;
     }
 
     public Integer getScores() {
@@ -87,9 +91,8 @@ public class TrainingScores implements Serializable{
     public String toString() {
         return "TrainingScores{" +
                 "id=" + id +
+                ", sem_year='" + sem_year + '\'' +
                 ", scores=" + scores +
                 '}';
     }
 }
-
-

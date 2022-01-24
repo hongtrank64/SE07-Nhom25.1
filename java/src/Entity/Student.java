@@ -1,22 +1,50 @@
 package Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.*;
 
 public class Student {
+
+    @SerializedName("response")
+    private String response;
+
+    @SerializedName("studentID")
     private String studentID;
+
+    @SerializedName("fullname")
     private String name;
+
+    @SerializedName("gender")
     private String gender;
+
+    @SerializedName("birthday")
     private Date birthday;
+
+    @SerializedName("address")
     private String address;
+
+    @SerializedName("classroom")
     private String classroom;
+
+    @SerializedName("email")
     private String email;
+
+    @SerializedName("phone")
     private String phone;
+
+    @SerializedName("GPA")
     private Float GPA;
+
+    @SerializedName("position")
+    private Integer position;
+
     private Account account;
     private List<TrainingScores> trainingScores = new ArrayList<TrainingScores>();
     private Set<Event> eventSet = new HashSet<>();
     private Set<StudentSubject> subjectSet = new HashSet<>();
     private Integer creditsCount = 0;
+
 
     public Student() {
     }
@@ -26,7 +54,9 @@ public class Student {
         this.name = name;
     }
 
-    public Student(String studentID, String name, String gender, Date birthday, String address, String classroom, String email, String phone) {
+    public Student(String response, String studentID, String name, String gender, Date birthday, String address, String classroom, String email, String phone, Integer position) {
+
+        this.response = response;
         this.studentID = studentID;
         this.name = name;
         this.gender = gender;
@@ -36,6 +66,15 @@ public class Student {
         this.email = email;
         this.phone = phone;
         this.GPA = (float) 0.0;
+        this.position = position;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        response = response;
     }
 
     public String getStudentID() {
@@ -110,6 +149,14 @@ public class Student {
         this.GPA = GPA;
     }
 
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
     public Account getAccount() {
         return account;
     }
@@ -148,24 +195,5 @@ public class Student {
 
     public void setSubjectSet(Set<StudentSubject> subjectSet) {
         this.subjectSet = subjectSet;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "studentID='" + studentID + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", address='" + address + '\'' +
-                ", classroom='" + classroom + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", GPA=" + GPA +
-                ", account=" + account +
-                ", trainingScores=" + trainingScores +
-                ", subjectSet=" + subjectSet +
-                ", creditsCount=" + creditsCount +
-                '}';
     }
 }

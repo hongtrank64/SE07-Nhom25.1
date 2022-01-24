@@ -1,26 +1,57 @@
 package Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Money {
-    private String name;
+
+    @SerializedName("response")
+    private String response;
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("name")
+    private String nameMoney;
+
+    @SerializedName("money")
     private int money;
-    private int root;
-    // 0 là thu, 1 là chi
+
+    @SerializedName("root")
+    private int root; // 0 là thu, 1 là chi
 
     public Money() {
     }
 
-    public Money(String name, int money, int root) {
-        this.name = name;
+    public Money(String response, int id, String nameMoney, int money, int root) {
+        this.response = response;
+        this.id = id;
+        this.nameMoney = nameMoney;
         this.money = money;
         this.root = root;
     }
 
-    public String getName() {
-        return name;
+    public String getResponse() {
+        return response;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNameMoney() {
+        return nameMoney;
+    }
+
+    public void setNameMoney(String nameMoney) {
+        this.nameMoney = nameMoney;
     }
 
     public int getMoney() {
@@ -39,4 +70,14 @@ public class Money {
         this.root = root;
     }
 
+    @Override
+    public String toString() {
+        return "Money{" +
+                "response='" + response + '\'' +
+                ", id=" + id +
+                ", nameMoney='" + nameMoney + '\'' +
+                ", money=" + money +
+                ", root=" + root +
+                '}';
+    }
 }

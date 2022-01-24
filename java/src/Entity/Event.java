@@ -1,18 +1,47 @@
 package Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Timer;
 
 public class Event implements Serializable{
+
+    @SerializedName("response")
+    private String response;
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    @SerializedName("eventID")
     private String eventId;
+
+    @SerializedName("eventName")
     private String eventName;
+
+    @SerializedName("timeStart")
     private Date timeStart;
+
+    @SerializedName("timeEnd")
     private Date timeEnd;
+
+    @SerializedName("address")
     private String address;
-    private boolean requirement = true;
-    private boolean status;
+
+    @SerializedName("requirement")
+    private Integer requirement;
+
+    @SerializedName("status")
+    private Integer status;
 
     private Set<Student> studentSet = new HashSet<Student>();
 
@@ -24,7 +53,8 @@ public class Event implements Serializable{
         this.eventName = eventName;
     }
 
-    public Event(String eventId, String eventName, Date timeStart, Date timeEnd, String address, boolean requirement, boolean status) {
+    public Event(String response, String eventId, String eventName, Date timeStart, Date timeEnd, String address, Integer requirement, Integer status) {
+        this.response = response;
         this.eventId = eventId;
         this.eventName = eventName;
         this.timeStart = timeStart;
@@ -33,6 +63,8 @@ public class Event implements Serializable{
         this.requirement = requirement;
         this.status = status;
     }
+
+
 
     public String getEventId() {
         return eventId;
@@ -74,19 +106,19 @@ public class Event implements Serializable{
         this.address = address;
     }
 
-    public boolean isRequirement() {
+    public Integer getRequirement() {
         return requirement;
     }
 
-    public void setRequirement(boolean requirement) {
+    public void setRequirement(Integer requirement) {
         this.requirement = requirement;
     }
 
-    public boolean isStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

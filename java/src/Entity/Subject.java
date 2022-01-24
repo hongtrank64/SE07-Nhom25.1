@@ -1,19 +1,46 @@
 package Entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class Subject {
+
+    @SerializedName("response")
+    private String response;
+
+    @SerializedName("subjectCode")
     private String subjectCode;
+
+    @SerializedName("subjectTitle")
     private String subjectTitle;
+
+    @SerializedName("credits")
     private Integer credits;
+
+    @SerializedName("teacherName")
     private String teacherName;
+
+    @SerializedName("type")
     private boolean type;
+
+    @SerializedName("room")
     private String room;
+
+    @SerializedName("timeStart")
     private Integer timeStart;
+
+    @SerializedName("timeEnd")
     private Integer timeEnd;
+
+    @SerializedName("day")
     private String day;
+
+    @SerializedName("semester")
     private Integer semester;
+
+    @SerializedName("year")
     private String year;
 
     private Set<StudentSubject> studentSubjectSet = new HashSet<>();
@@ -21,16 +48,22 @@ public class Subject {
     public Subject() {
     }
 
-    public Subject(String subjectCode, String subjectTitle) {
+    public Subject(String response, String subjectCode, String subjectTitle) {
+        this.response = response;
         this.subjectCode = subjectCode;
         this.subjectTitle = subjectTitle;
     }
 
-    public Subject(String subjectCode, String subjectTitle, Integer credits, String teacherName) {
+    public Subject(String response, String subjectCode, String subjectTitle, Integer credits, String teacherName) {
+        this.response = response;
         this.subjectCode = subjectCode;
         this.subjectTitle = subjectTitle;
         this.credits = credits;
         this.teacherName = teacherName;
+    }
+
+    public String getResponse() {
+        return response;
     }
 
     public String getSubjectCode() {
