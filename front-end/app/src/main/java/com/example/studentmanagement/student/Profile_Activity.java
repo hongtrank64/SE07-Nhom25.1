@@ -2,6 +2,7 @@ package com.example.studentmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,18 +33,9 @@ public class Profile_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        ID = findViewById(R.id.pro_studentid);
-        Fullname = findViewById(R.id.pro_fullname);
-        Gender = findViewById(R.id.pro_gender);
-        Birthday = findViewById(R.id.pro_birth);
-        Address = findViewById(R.id.pro_address);
-        Class_room = findViewById(R.id.pro_classroom);
-        Email = findViewById(R.id.pro_email);
-        Phone = findViewById(R.id.pro_phone);
-        GPA = findViewById(R.id.pro_gpa);
+        initUI();
 
-
-        String loggedID = SharedPref.getInstance(this).LoggedInID();
+        String loggedID = SharedPref.getInstance(this).LoggedInID(); //studentID
 
         apiInterface_Profile = ApiClient.getClient().create(ApiInterface.class);
         Call<Student> profileStudent = apiInterface_Profile.profile_Student(loggedID);
@@ -76,7 +68,7 @@ public class Profile_Activity extends AppCompatActivity {
             }
         });
 
-        btn_Update = findViewById(R.id.btn_update);
+        //button update profile
         btn_Update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,19 +105,37 @@ public class Profile_Activity extends AppCompatActivity {
 
                 if (response.body().getResponse().equals("ok")) {
                     Toast.makeText(Profile_Activity.this, "Cập nhật thành công", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Profile_Activity.this, Student_Activity.class));
                 }
+
                 else {
-                    Toast.makeText(Profile_Activity.this, "Cập nhật thất bại", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Profile_Activity.this, "Cập nhật thất bại ", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
-                Toast.makeText(Profile_Activity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Profile_Activity.this,t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
                 Log.e("Response fail", t.getLocalizedMessage(), t);
 
             }
         });
+    }
+
+    private void initUI() {
+
+        ID = findViewById(R.id.pro_studentid);
+        Fullname = findViewById(R.id.pro_fullname);
+        Gender = findViewById(R.id.pro_gender);
+        Birthday = findViewById(R.id.pro_birth);
+        Address = findViewById(R.id.pro_address);
+        Class_room = findViewById(R.id.pro_classroom);
+        Email = findViewById(R.id.pro_email);
+        Phone = findViewById(R.id.pro_phone);
+        GPA = findViewById(R.id.pro_gpa);
+
+        btn_Update = findViewById(R.id.btn_update);
+
     }
 
     public static String convertDateToString(Date date, String format) {
