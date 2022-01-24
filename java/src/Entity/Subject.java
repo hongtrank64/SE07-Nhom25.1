@@ -23,7 +23,7 @@ public class Subject {
     private String teacherName;
 
     @SerializedName("type")
-    private boolean type;
+    private String type;
 
     @SerializedName("room")
     private String room;
@@ -98,11 +98,11 @@ public class Subject {
         this.teacherName = teacherName;
     }
 
-    public boolean isType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(boolean type) {
+    public void setType(String type) {
         this.type = type;
     }
 
