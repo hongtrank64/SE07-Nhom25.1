@@ -114,10 +114,15 @@ public class Profile_Activity extends AppCompatActivity {
                 if (response.body().getResponse().equals("ok")) {
                     Toast.makeText(Profile_Activity.this, "Cập nhật thành công", Toast.LENGTH_LONG).show();
                 }
+                else {
+                    Toast.makeText(Profile_Activity.this, "Cập nhật thất bại", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
+                Toast.makeText(Profile_Activity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("Response fail", t.getLocalizedMessage(), t);
 
             }
         });
