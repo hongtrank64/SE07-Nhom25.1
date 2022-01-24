@@ -27,8 +27,8 @@ public class Student_Activity extends AppCompatActivity {
             finish();
         }
 
-        String loggedName = SharedPref.getInstance(this).LoggedInUser();
-        String loggedID = SharedPref.getInstance(this).LoggedInID();
+        String loggedName = SharedPref.getInstance(this).LoggedInUser(); // username
+        String loggedID = SharedPref.getInstance(this).LoggedInID(); //studentID
 
         name.setText(loggedName + "\n" + loggedID);
 
