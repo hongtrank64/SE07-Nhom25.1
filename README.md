@@ -25,7 +25,9 @@
         + Chỉ có thủ quỹ mới được quyền chỉnh sửa, những người khác ở chế độ xem quỹ lớp.
         + Mọi người đều có thể xem được danh sách lớp và các chức vụ
 ## 4. Cài đặt
+	+ Cách cài đặt được hướng dẫn chi tiết trong mục Wiki.
 ## 5. Cách sử dụng
+	+ Cách sử dụng được hướng dẫn chi tiết trong mục Wiki.
 ## 6. Thành viên nhóm
         + Trần Thị Hồng
         + Phạm Thị Lan Anh
