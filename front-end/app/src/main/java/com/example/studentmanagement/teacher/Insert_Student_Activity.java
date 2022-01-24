@@ -3,32 +3,39 @@ package com.example.studentmanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.icu.util.ULocale;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.studentmanagement.api.ApiClient;
 import com.example.studentmanagement.api.ApiInterface;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
+import java.util.List;
+
 
 import Entity.Student;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Query;
+
 
 
 public class Insert_Student_Activity extends AppCompatActivity {
 
-    private EditText StudentID, Fullname, Gender, Birth, Address, Classroom, Email, Phone ,GPA;
+    private EditText StudentID, Fullname, Gender, Birth, Address, Classroom, Email, Phone ,GPA, Position;
     private Button btn_Insert;
     private ApiInterface apiInterface_insert;
 
@@ -37,6 +44,21 @@ public class Insert_Student_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_student);
+
+        initUI();
+
+        //button insert student
+        btn_Insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert_student();
+
+            }
+        });
+
+    }
+
+    private void initUI() {
 
         StudentID = findViewById(R.id.insert_studentID);
         Fullname = findViewById(R.id.insert_fullname);
@@ -48,17 +70,12 @@ public class Insert_Student_Activity extends AppCompatActivity {
         Phone = findViewById(R.id.insert_phone);
         GPA = findViewById(R.id.insert_gpa);
 
+        Position = findViewById(R.id.insert_position);
+
         btn_Insert = findViewById(R.id.btn_insert);
-        btn_Insert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                insert_student();
-
-            }
-        });
-
 
     }
+
 
     private void insert_student() {
 
@@ -66,9 +83,7 @@ public class Insert_Student_Activity extends AppCompatActivity {
         String full_name = Fullname.getText().toString();
         String gender = Gender.getText().toString();
 
-        String Birth_date = Birth.getText().toString();
-        Date birth = null;
-        convertStringToDate(birth, Birth_date);
+        String birth = Birth.getText().toString();
 
         String address = Address.getText().toString();
         String classroom = Classroom.getText().toString();
@@ -76,20 +91,20 @@ public class Insert_Student_Activity extends AppCompatActivity {
         String phone = Phone.getText().toString();
 
         Float gpa = Float.parseFloat(GPA.getText().toString());
+        Integer position = Integer.valueOf(Position.getText().toString());
 
-        insert(studentID, full_name, gender, birth,  address, classroom, email, phone, gpa);
+
+        insert(studentID, full_name, gender, birth,  address, classroom, email, phone, gpa, position);
 
     }
 
-    private void insert(String in_studentID, String in_full_name, String in_gender, Date in_birth, String in_address, String in_classroom, String in_email, String in_phone, Float in_gpa){
+    private void insert(String in_studentID, String in_full_name, String in_gender, String in_birth, String in_address, String in_classroom, String in_email, String in_phone, Float in_gpa, int in_position){
 
         in_studentID = StudentID.getText().toString();
         in_full_name = Fullname.getText().toString();
         in_gender = Gender.getText().toString();
 
-        String Birth_date = Birth.getText().toString();
-        //in_birth = convertStringToDate(Birth_date);
-        convertStringToDate(in_birth, Birth_date);
+        in_birth = Birth.getText().toString();
 
         in_address = Address.getText().toString();
         in_classroom = Classroom.getText().toString();
@@ -98,9 +113,10 @@ public class Insert_Student_Activity extends AppCompatActivity {
 
         in_gpa = Float.parseFloat(GPA.getText().toString());
 
+        in_position = Integer.parseInt(Position.getText().toString());
 
         apiInterface_insert = ApiClient.getClient().create(ApiInterface.class);
-        Call<Student> insertStudent = apiInterface_insert.insert_Student(in_studentID, in_full_name, in_gender, in_birth, in_address, in_classroom, in_email, in_phone, in_gpa);
+        Call<Student> insertStudent = apiInterface_insert.insert_Student(in_studentID, in_full_name, in_gender, in_birth, in_address, in_classroom, in_email, in_phone, in_gpa, in_position);
         insertStudent.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {
@@ -110,7 +126,7 @@ public class Insert_Student_Activity extends AppCompatActivity {
                     startActivity(new Intent(Insert_Student_Activity.this, Teacher_Activity.class));
                 }
                 else {
-                    Toast.makeText(Insert_Student_Activity.this,"Đăng kí thất bại", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Insert_Student_Activity.this,"Lưu thất bại", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -125,19 +141,24 @@ public class Insert_Student_Activity extends AppCompatActivity {
 
     }
 
-    public static Date convertStringToDate(Date date1, String format) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        try {
-            date1 = formatter.parse(format);
-            return date1;
-
+    /*public static Date convertStringToDate(String string) {
+        //string 2001/06/23
+        String year = "";
+        String month = "";
+        String day = "";
+        for (int i = 0; i < 4; i++) {
+            year = year + string.charAt(i);
         }
-        catch (ParseException e) {
-            e.printStackTrace();
+        for (int i = 5; i < 7; i++) {
+            month = month + string.charAt(i);
         }
-        return date1;
+        for (int i = 8; i < 10; i++) {
+            day = day + string.charAt(i);
+        }
+        Date date = new Date(Integer.parseInt(day), Integer.parseInt(month), Integer.parseInt(year));
+        return date; //date = 2001-06-23
 
-    }
+    }*/
 
 
 }
