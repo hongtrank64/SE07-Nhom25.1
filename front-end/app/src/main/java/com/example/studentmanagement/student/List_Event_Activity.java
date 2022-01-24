@@ -96,7 +96,13 @@ public class List_Event_Activity extends AppCompatActivity {
                         end.setText(convertDateToString(eventList.get(i).getTimeEnd(), "dd/MM/YYYY"));
                         address.setText(eventList.get(i).getAddress());
                         requirement.setText(String.valueOf(eventList.get(i).getRequirement()));
-                        status.setText(String.valueOf(eventList.get(i).getStatus()));
+
+                        int sts = eventList.get(i).getStatus();
+                        if (sts == 0) {
+                            status.setText("Bắt buộc");
+                        }
+                        else status.setText("Tự chọn");
+
 
                         tableRow.addView(ID_event);
                         tableRow.addView(event_name);
@@ -112,7 +118,7 @@ public class List_Event_Activity extends AppCompatActivity {
                     }
                 }
 
-                TableRow tableRow_note1 = new TableRow(List_Event_Activity.this);
+                /*TableRow tableRow_note1 = new TableRow(List_Event_Activity.this);
                 tableRow_note1.setPadding(15,200,10,0);
 
                 TextView note_1 = new TextView(List_Event_Activity.this);
@@ -128,7 +134,7 @@ public class List_Event_Activity extends AppCompatActivity {
                 note_2.setText("1 là tự chọn");
                 note_2.setTextSize(20);
                 tableRow_note2.addView(note_2);
-                tblayout_listEvent.addView(tableRow_note2);
+                tblayout_listEvent.addView(tableRow_note2);*/
 
             }
 
@@ -158,9 +164,13 @@ public class List_Event_Activity extends AppCompatActivity {
 
                     if (position == 1) {
                         TableRow tableRow_select = new TableRow(List_Event_Activity.this);
-                        tableRow_select.setPadding(250,200,0,0);
+                        tableRow_select.setPadding(350,400,0,0);
+
                         Button btn_insertEvent = new Button(List_Event_Activity.this);
                         btn_insertEvent.setText("Thêm mới");
+                        btn_insertEvent.setTextSize(20);
+                        btn_insertEvent.setWidth(300);
+                        btn_insertEvent.setHeight(200);
 
                         tableRow_select.addView(btn_insertEvent);
                         tblayout_listEvent.addView(tableRow_select);
@@ -187,6 +197,8 @@ public class List_Event_Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Student>> call, Throwable t) {
+                Toast.makeText(List_Event_Activity.this,t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                Log.e("Response fail", t.getLocalizedMessage(), t);
 
             }
         });
