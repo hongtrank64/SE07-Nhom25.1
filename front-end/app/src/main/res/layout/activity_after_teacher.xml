@@ -59,7 +59,7 @@
             android:textSize="12dp"></Button>
 
         <Button
-            android:id="@+id/a4"
+            android:id="@+id/event"
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"

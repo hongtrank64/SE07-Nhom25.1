@@ -27,13 +27,12 @@
                 android:stretchColumns="*">
 
                 <TextView
-                    android:layout_marginLeft="75dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginBottom="20dp"
                     android:hint="Danh sách lớp"
-                    android:textSize="40dp">
-                </TextView>
+                    android:textSize="40dp"></TextView>
 
                 <TableRow
                     android:layout_marginLeft="10px"
@@ -45,65 +44,66 @@
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="MSV"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_fullname"
-                        android:layout_width="240dp"
+                        android:layout_width="250dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Họ và tên"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_gender"
                         android:layout_width="80dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Giới tính"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_birth"
                         android:layout_width="120dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Ngày sinh"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_address"
                         android:layout_width="130dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Địa chỉ"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_classroom"
                         android:layout_width="80dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Lớp"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_email"
                         android:layout_width="280dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="Email"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/list_phone"
                         android:layout_width="130dp"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:text="SĐT"
-                        android:textSize="20dp"
-                        android:gravity="center"/>
+                        android:textSize="20dp" />
+
 
                 </TableRow>
             </TableLayout>

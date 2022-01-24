@@ -72,6 +72,7 @@
             android:id="@+id/insert_timeStart"
             android:layout_width="285dp"
             android:layout_height="35dp"
+            android:hint="yyyy/MM/dd"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="219dp"
             android:background="@drawable/vien"
@@ -90,6 +91,7 @@
             android:id="@+id/insert_timeEnd"
             android:layout_width="285dp"
             android:layout_height="35dp"
+            android:hint="yyyy/MM/dd"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="276dp"
             android:background="@drawable/vien"
@@ -152,6 +154,13 @@
             android:paddingLeft="10dp"
             android:textSize="20dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="490dp"
+            android:text="*0: Bắt buộc, 1: Tự chọn"
+            android:textSize="15dp"/>
 
         <Button
             android:id="@+id/btn_insertEvent"

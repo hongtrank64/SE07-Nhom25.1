@@ -95,10 +95,10 @@
             android:layout_marginTop="276dp"
             android:background="@drawable/vien"
             android:ems="10"
+            android:hint="yyyy/MM/dd"
             android:inputType="date"
             android:paddingLeft="10dp"
-            android:textSize="20dp"
-            android:hint="yyyy/MM/dd"/>
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="100dp"
@@ -214,12 +214,7 @@
             android:layout_marginLeft="130dp"
             android:layout_marginTop="660dp"
             android:text="*0:Sinh viên, 1:Lớp trưởng, 2:Thủ quỹ"
-            android:textSize="15dp">
-
-        </TextView>
-
-
-
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/btn_insert"

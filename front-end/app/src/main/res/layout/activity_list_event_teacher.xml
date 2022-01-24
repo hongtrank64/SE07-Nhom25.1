@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".List_Event_Activity"
+    tools:context=".List_Event_Teacher_Activity"
     android:background="#FBD7DA">
 
     <HorizontalScrollView
@@ -49,7 +49,6 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/list_fullname"
                         android:layout_width="400dp"
                         android:background="@drawable/border"
                         android:text="Tên sự kiện"
@@ -57,7 +56,6 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/list_gender"
                         android:layout_width="180dp"
                         android:background="@drawable/border"
                         android:text="Thời gian bắt đầu"
@@ -65,7 +63,6 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/list_birth"
                         android:layout_width="180dp"
                         android:background="@drawable/border"
                         android:text="Thời gian kết thúc"
@@ -73,7 +70,6 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/list_address"
                         android:layout_width="300dp"
                         android:background="@drawable/border"
                         android:text="Địa chỉ"
