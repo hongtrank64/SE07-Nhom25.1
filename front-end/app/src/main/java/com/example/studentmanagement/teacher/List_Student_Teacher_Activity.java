@@ -28,7 +28,6 @@ public class List_Student_Teacher_Activity extends AppCompatActivity {
     private ApiInterface apiInterface_listStudent;
     private List<Student> studentList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +37,12 @@ public class List_Student_Teacher_Activity extends AppCompatActivity {
 
 
         apiInterface_listStudent = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<Student>> student_list = apiInterface_listStudent.list_Student_teacher();
+        Call<List<Student>> student_list = apiInterface_listStudent.list_Student();
         student_list.enqueue(new Callback<List<Student>>() {
             @Override
             public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+                studentList = response.body();
                 if (response.isSuccessful()) {
-                    studentList = response.body();
                     for (int i = 0; i < studentList.size(); i++) {
                         TableRow tableRow = new TableRow(List_Student_Teacher_Activity.this);
                         tableRow.setPadding(10,0,10,0);
@@ -94,6 +93,11 @@ public class List_Student_Teacher_Activity extends AppCompatActivity {
                         list_GPA.setGravity(Gravity.CENTER);
                         list_GPA.setBackgroundResource(R.drawable.border);
 
+                        TextView list_position = new TextView(List_Student_Teacher_Activity.this);
+                        list_position.setTextSize(20);
+                        list_position.setGravity(Gravity.CENTER);
+                        list_position.setBackgroundResource(R.drawable.border);
+
                         list_studentID.setText(studentList.get(i).getStudentID());
                         list_fullname.setText(studentList.get(i).getName());
                         list_gender.setText(studentList.get(i).getGender());
@@ -103,6 +107,18 @@ public class List_Student_Teacher_Activity extends AppCompatActivity {
                         list_email.setText(studentList.get(i).getEmail());
                         list_phone.setText(studentList.get(i).getPhone());
                         list_GPA.setText(String.valueOf(studentList.get(i).getGPA()));
+
+                        int pos = studentList.get(i).getPosition();
+                        if (pos == 0) {
+                            list_position.setText("Sinh viên");
+                        }
+                        else if (pos == 1) {
+                            list_position.setText("Lớp trưởng");
+                        }
+                        else if (pos == 2) {
+                            list_position.setText("Thủ quỹ");
+                        }
+
 
 
 
@@ -115,11 +131,23 @@ public class List_Student_Teacher_Activity extends AppCompatActivity {
                         tableRow.addView(list_email);
                         tableRow.addView(list_phone);
                         tableRow.addView(list_GPA);
+                        tableRow.addView(list_position);
 
                         tblayout_listStudent.addView(tableRow);
                     }
 
                 }
+
+                //show the number of students
+                TableRow tableRow_count = new TableRow(List_Student_Teacher_Activity.this);
+                tableRow_count.setPadding(20,100,10,10);
+
+                TextView count = new TextView(List_Student_Teacher_Activity.this);
+                count.setText("Tổng: " + studentList.size() + " sinh viên");
+                count.setTextSize(20);
+                tableRow_count.addView(count);
+                tblayout_listStudent.addView(tableRow_count);
+
             }
 
             @Override
