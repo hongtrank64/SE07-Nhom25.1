@@ -2,4 +2,17 @@
     <string name="app_name">StudentManagement</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="size_entries">
+        <item>Sinh viên</item>
+        <item>Lớp trưởng</item>
+        <item>Thủ quỹ</item>
+    </string-array>
+
+    <string-array name="size_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

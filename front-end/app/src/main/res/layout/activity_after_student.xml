@@ -59,7 +59,7 @@
             android:textSize="12dp"></Button>
 
         <Button
-            android:id="@+id/list_score"
+            android:id="@+id/listScore"
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
@@ -71,29 +71,41 @@
             android:text="Kết quả học tập"
             android:textSize="12dp"></Button>
 
-            <Button
-                android:id="@+id/a5"
-                android:layout_width="130dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="435dp"
-                android:background="@drawable/background_button"
-                android:drawableTop="@drawable/event"
-                android:text="Sự kiện"
-                android:textSize="12dp"></Button>
+        <Button
+            android:id="@+id/listEvent"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="435dp"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/event"
+            android:text="Sự kiện"
+            android:textSize="12dp"></Button>
 
-            <Button
-                android:id="@+id/btndangxuat"
-                android:layout_width="130dp"
-                android:layout_height="150dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="435dp"
-                android:layout_toRightOf="@+id/a5"
-                android:background="@drawable/background_button"
-                android:drawableTop="@drawable/logout"
-                android:text="Đăng xuất"
-                android:textSize="12dp"></Button>
+        <Button
+            android:id="@+id/funds"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="435dp"
+            android:layout_toRightOf="@+id/listEvent"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/funds"
+            android:text="Quỹ lớp"
+            android:textSize="12dp"></Button>
+
+        <Button
+            android:id="@+id/btndangxuat"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="620dp"
+            android:background="@drawable/background_button"
+            android:drawableTop="@drawable/logout"
+            android:text="Đăng xuất"
+            android:textSize="12dp"></Button>
 
     </RelativeLayout>
 </ScrollView>

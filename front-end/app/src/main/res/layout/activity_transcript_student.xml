@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Transcript_Student_Activity"
+    android:background="#FBD7DA">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/vien"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <TableLayout
+                android:id="@+id/table_list_trainingScore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Kết quả học tập"
+                    android:textSize="40dp">
+                </TextView>
+
+                <TableRow
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px">
+
+
+                    <TextView
+                        android:id="@+id/year"
+                        android:layout_width="5dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:text="Năm học"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="20dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:text="Điểm thường xuyên"
+                        android:textSize="20sp" />
+                </TableRow>
+
+            </TableLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
+
+</RelativeLayout>

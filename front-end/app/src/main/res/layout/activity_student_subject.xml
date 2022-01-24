@@ -44,59 +44,67 @@
 
                     <TextView
                         android:id="@+id/ID_subject"
-                        android:layout_width="100dp"
+                        android:layout_width="150dp"
                         android:background="@drawable/border"
                         android:text="Mã môn"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/subject_name"
-                        android:layout_width="200dp"
+                        android:layout_width="300dp"
                         android:background="@drawable/border"
                         android:text="Tên môn"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/credit"
                         android:layout_width="70dp"
                         android:background="@drawable/border"
                         android:text="Tín chỉ"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/name_teacher"
                         android:layout_width="200dp"
                         android:background="@drawable/border"
                         android:text="Tên GV"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/room"
-                        android:layout_width="100dp"
+                        android:layout_width="150dp"
                         android:background="@drawable/border"
                         android:text="Phòng học"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/day"
                         android:layout_width="50dp"
                         android:background="@drawable/border"
                         android:text="Thứ"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/start"
                         android:layout_width="90dp"
                         android:background="@drawable/border"
                         android:text="Tiết bđầu"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/end"
                         android:layout_width="95dp"
                         android:background="@drawable/border"
                         android:text="Tiết kthúc"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:gravity="center"/>
 
                 </TableRow>
             </TableLayout>
