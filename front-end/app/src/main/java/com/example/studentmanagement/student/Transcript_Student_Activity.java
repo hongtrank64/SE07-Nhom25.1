@@ -3,10 +3,12 @@ package com.example.studentmanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.studentmanagement.api.ApiClient;
 import com.example.studentmanagement.api.ApiInterface;
@@ -74,6 +76,8 @@ public class Transcript_Student_Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<TrainingScores>> call, Throwable t) {
+                Toast.makeText(Transcript_Student_Activity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("Response fail", t.getLocalizedMessage(), t);
 
             }
         });
@@ -83,6 +87,7 @@ public class Transcript_Student_Activity extends AppCompatActivity {
         showGPA.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {
+
                 if (response.body().getResponse().equals("ok")) {
                     TableRow tableRow_name = new TableRow(Transcript_Student_Activity.this);
                     tableRow_name.setPadding(10,100,30,0);
