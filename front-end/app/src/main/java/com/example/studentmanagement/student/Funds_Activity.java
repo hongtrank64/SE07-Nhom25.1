@@ -85,7 +85,6 @@ public class Funds_Activity extends AppCompatActivity {
                             total -= list_Funds.get(i).getMoney();
                         }
 
-
                         tableRow.addView(ID_funds);
                         tableRow.addView(money_name);
                         tableRow.addView(money_fly);
@@ -105,9 +104,6 @@ public class Funds_Activity extends AppCompatActivity {
                     tblayout_listFunds.addView(tbrowTotal);
 
                 }
-
-
-
             }
 
             @Override
@@ -135,7 +131,7 @@ public class Funds_Activity extends AppCompatActivity {
 
                     if (position == 2) {
                         TableRow tableRow_select = new TableRow(Funds_Activity.this);
-                        tableRow_select.setPadding(400,800,0,0);
+                        tableRow_select.setPadding(300,400,0,0);
 
                         Button btn_insertFunds = new Button(Funds_Activity.this);
                         btn_insertFunds.setText("Thêm mới");
