@@ -35,7 +35,8 @@
 	
 ## 6. Những vấn đề gặp phải
 	+ Chỉ duy nhất máy tính của bạn Kim Ngân chạy được Android Studio, máy tính của bạn Lan Anh win thấp, máy tính của bạn Hồng tải được về nhưng gặp phải lỗi không fix được.
-	+ Gặp phải vấn đề connect với data -> đã fix được.
+	+ Gặp phải vấn đề connect với data.
+	+ Gặp vấn đề thiết kế giao diện của Android. 
 	+ Do có một thành viên trong nhóm f0 phải vào điều trị ở khu cách li.
 	
 ## 7. Thành viên nhóm
