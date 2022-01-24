@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="730dp"
+        android:background="#F8D0D5"
+        tools:context=".Insert_Student_Activity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Thông tin cá nhân"
+            android:textColor="#000000"
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="110dp"
+            android:text="MSV:"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/insert_studentID"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="107dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="167dp"
+            android:text="Họ và tên:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/insert_fullname"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="162dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="224dp"
+            android:text="Giới tính:"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/insert_gender"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="219dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+       <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="281dp"
+            android:text="Ngày sinh:"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/insert_birth"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="276dp"
+            android:background="@drawable/vien"
+            android:ems="10"
+            android:inputType="date"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="338dp"
+            android:text="Địa chỉ:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/insert_address"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="335dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="395dp"
+            android:text="Lớp:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/insert_classroom"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="390dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="452dp"
+            android:text="Email:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/insert_email"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="440dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="509dp"
+            android:text="SĐT:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/insert_phone"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="505dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="566dp"
+            android:text="GPA:"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/insert_gpa"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="559dp"
+            android:background="@drawable/vien"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_insert"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="640dp"
+            android:layout_marginBottom="20dp"
+            android:background="#9A71E3"
+            android:text="Lưu" />
+
+
+    </RelativeLayout>
+</ScrollView>
