@@ -158,6 +158,8 @@ public class Transcript_Student_Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
+                Toast.makeText(Transcript_Student_Activity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("Response fail", t.getLocalizedMessage(), t);
 
             }
         });
