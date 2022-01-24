@@ -2,7 +2,10 @@
 
 	require "connect.php";
 	
-	$sql = " SELECT * FROM event ";
+	$studentID = $_GET["studentID"];
+	
+	$sql = " SELECT trainingscores.sem_year, trainingscores.scores FROM trainingscores 
+			WHERE trainingscores.studentID = '$studentID' ";
 	$result = mysqli_query($con, $sql);
 	
 	if (mysqli_num_rows($result)) {

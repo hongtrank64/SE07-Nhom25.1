@@ -34,11 +34,4 @@
 	mysqli_close($con);
 										
 		
-	
-	
-
-
-	
-	
-	 
 ?>
